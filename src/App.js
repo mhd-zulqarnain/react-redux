@@ -16,16 +16,20 @@ class App extends React.Component {
   }
   render() {
     return (
-        <div className="App">
-          <h3>Input your birthday</h3>
-          <Form inline >
-            <FormControl className={"text-center"}
-            type = "date"
-            onChange = {event => this.setState({date: event.target.value})}
-            />
+        <div className="App justify-content-center">
+          <Form  className={"col-lg-6 offset-lg-3"}>
+              <h2>Input your birthday</h2>
+              <div className={"row justify-content-center"}>
+                  <FormControl  className={"col-lg-5 "}
+                      type = "date"
+                      onChange = {event => this.setState({date: event.target.value})}
+                  />
+              </div>
+              <br/>
+              <Button onClick={this.changeBirthday()}>Submit</Button>
+              <AgeState date = {this.state.date}/>
           </Form>
-          <Button onClick={this.changeBirthday()}>Submit</Button>
-            <AgeState date = {this.state.date}/>
+
         </div>
     );
   }
